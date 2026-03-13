@@ -1,0 +1,25 @@
+###
+POST  http://localhost:4002/auth/users
+Content-Type: application/json
+
+{
+    "firstName":"koppula",
+    "lastName":"varun",
+    "email":"Author@example.com",
+    "password":"varun123",
+    "role":"AUTHOR",
+    "profileimageurl":"https://example.com/profile1.jpg"
+}
+
+###
+POST http://localhost:4002/auth/login
+Content-Type: application/json
+
+{
+    "email":"Author@example.com",
+    "password":"varun123"
+}
+
+###
+GET http://localhost:4002/auth/logout
+

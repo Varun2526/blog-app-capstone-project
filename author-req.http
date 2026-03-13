@@ -1,0 +1,24 @@
+###create new article 
+POST http://localhost:4002/author-api/article
+Content-Type: application/json
+
+{
+    "author":"69b3a66c3f95311b52f0a89b",
+    "title":"Article-1 by  Author 1",
+    "category":"cse",
+    "content":"this is a test article "
+}
+
+###
+GET http://localhost:4002/author-api/articles
+
+### update article by author 
+PUT http://localhost:4002/author-api/article
+Content-Type: application/json
+
+{
+    "articleid":"69b3d5cb3d04e6d8406dc7f3",
+    "title":"Article-1 by  Author 1 - updated",
+    "category":"cse",
+    "content":"this is a test article - updated"
+}
