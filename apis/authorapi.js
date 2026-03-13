@@ -78,3 +78,4 @@ if(!modifiedarticle){
 //send response to client
 res.status(200).json({message:"article updated successfully",modifiedarticle})
 })
+

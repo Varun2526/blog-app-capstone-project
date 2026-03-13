@@ -22,3 +22,5 @@ Content-Type: application/json
     "category":"cse",
     "content":"this is a test article - updated"
 }
+
+#delete the article by article Id (soft delete)
