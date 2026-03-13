@@ -24,3 +24,10 @@ Content-Type: application/json
 }
 
 #delete the article by article Id (soft delete)
+PATCH http://localhost:4002/localhost:4002/author-api/article
+Content-Type: application/json
+
+{
+    "ArticleId":"",
+    "isArticleActive":true
+}

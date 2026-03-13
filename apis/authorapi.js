@@ -79,3 +79,21 @@ if(!modifiedarticle){
 res.status(200).json({message:"article updated successfully",modifiedarticle})
 })
 
+
+//delte the author by authorid (soft delete )
+authorapp.patch("/article",verifytoken("AUTHOR"),async(req,res)=>{  
+    //get author id from decoded token
+    const authorIdofToken = req.user?.id
+    //get article id from client 
+    const {articleid,isArticleActive} = req.body
+    //get article by id 
+    const articleofDB = await articleModel.findOne({_id:articleid,author:authorIdofToken})
+    //check status of article
+    if(isArticleActive===articleofDB.isArcticleActive){
+    return res.status(200).json({message:"article already in the same state"})
+    }
+    articleofDB.isArcticleActive = isArticleActive
+    await articleofDB.save()
+    //send res 
+    res.status(200).json({message:"article status updated successfully",articleofDB})
+})
